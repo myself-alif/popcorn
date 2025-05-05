@@ -27,6 +27,8 @@ body {
   color: var(--color-text);
   background-color: var(--color-background-900);
   padding: 2.4rem;
+  height: 100vh !important;
+  overflow: none;
 }
 
 /* ******* */
@@ -52,9 +54,10 @@ body {
 .box {
   width: 42rem;
   max-width: 42rem;
+  height: calc(100vh - 7.2rem - 3 * 2.4rem);
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
+  overflow: hidden;
   position: relative;
 }
 
@@ -138,11 +141,12 @@ body {
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  /* overflow: scroll; */
+  height: calc(100vh - 7.2rem - 3 * 2.4rem);
+  overflow-y: scroll;
 }
 
 .list-watched {
-  height: calc(100% - 9rem);
+  /* height: calc(100% - 9rem); */
 }
 
 .list li {
@@ -240,6 +244,7 @@ body {
 /* ******* */
 
 .details {
+  /* overflow-y: scroll; */
   line-height: 1.4;
   font-size: 1.4rem;
 }

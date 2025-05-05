@@ -3,8 +3,8 @@ import Star from "./Star";
 
 export default function StarRating({
   maxRating = 5,
-  color = "#fcc419",
-  size = 48,
+  starColor = "#fcc419",
+  starSize = 48,
   className = "",
   messages = [],
   defaultRating = 0,
@@ -12,6 +12,8 @@ export default function StarRating({
 }) {
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
+  const color = starColor;
+  const size = starSize;
 
   function handleRating(rating) {
     setRating(rating);
@@ -31,8 +33,8 @@ export default function StarRating({
             onHoverIn={() => setTempRating(i + 1)}
             onHoverOut={() => setTempRating(0)}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
-            color="#fcc419"
-            size={48}
+            color={color}
+            size={size}
           />
         ))}
       </div>
