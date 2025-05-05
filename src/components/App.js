@@ -33,6 +33,7 @@ export default function App() {
     }
     setIsLoading(true);
     setError("");
+    setSelectedID(null);
 
     (async function () {
       try {
