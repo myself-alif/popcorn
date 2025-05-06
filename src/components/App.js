@@ -18,7 +18,9 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState({});
-  const [watched, setWatched] = useState([]);
+  const [watched, setWatched] = useState(() =>
+    JSON.parse(localStorage.getItem("watched"))
+  );
   const [query, setQuery] = useState("");
   const [selectedID, setSelectedID] = useState(null);
   const [error, setError] = useState("");
@@ -81,6 +83,10 @@ export default function App() {
 
     return () => document.removeEventListener("keydown", handleClose);
   }, [handleCloseMovie]);
+
+  useEffect(() => {
+    localStorage.setItem("watched", JSON.stringify(watched));
+  }, [watched]);
 
   return (
     <>
